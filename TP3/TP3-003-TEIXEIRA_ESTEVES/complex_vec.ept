@@ -1,0 +1,17 @@
+open Complex
+open Complex_io
+open Complex_vec_io
+
+fun vect_add<<n:int>>(v1 : complex^n; v2 : complex^n) returns (o : complex^n)
+let
+	o = map<<n>> complex_add(v1,v2);
+tel
+
+fun sum_of_all<<n:int>>(v : complex^n) returns (o : complex)
+var
+	tmp : complex;
+let
+	tmp = { re = 0.0  ;
+		im = 0.0  };
+	o = fold<<n>> complex_add(v,tmp);
+tel 
