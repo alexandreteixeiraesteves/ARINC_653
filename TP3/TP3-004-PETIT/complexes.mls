@@ -1,0 +1,18 @@
+open Complex
+open Complex_io
+node complexes returns 
+var s : Complex.complex; r : Complex.complex; q : Complex.complex;
+    p : Complex.complex; o : Complex.complex;
+let
+  () = Complex_io.print_complex(s);
+  () = Complex_io.print_complex(r);
+  s = Complex.complex_mul(o, p);
+  r = Complex.complex_sub(o, p);
+  () = Complex_io.print_complex(q);
+  q = Complex.complex_add(o, p);
+  () = Complex_io.print_complex(p);
+  p = Complex_io.read_complex();
+  () = Complex_io.print_complex(o);
+  o = Complex_io.read_complex()
+tel
+

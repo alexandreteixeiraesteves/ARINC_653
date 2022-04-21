@@ -1,6 +1,7 @@
-#include "twiddle_init.h"
+
 #include <math.h>
 #include <complex.h>
+#include "twiddle_init.h"
 float Complex__pi = 3.14159265358979;
 void init_twiddle1024(Complex__complex*twiddle) {
   int i,span ;

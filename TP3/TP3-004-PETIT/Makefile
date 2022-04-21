@@ -1,6 +1,6 @@
 CC= gcc
-CFLAGS= -lm -I `heptc -where`/c  # options de compilation pour les sources C
-
+CFLAGS= -I `heptc -where`/c  # options de compilation pour les sources C
+LDFLAGS = -lm
 #pre_src= complex_c/complex.c #complex_io.c
 src= complex_c/complex_types.c complex_c/complex.c complex_io_types.c complex_io.c complexes_c/complexes_types.c complexes_c/complexes.c
 
@@ -21,7 +21,8 @@ all:
 	heptc -I `heptc -where`/c complexes.ept
 	heptc -I `heptc -where`/c -target c complexes.ept
 	$(CC) -I$(PWD) $(CFLAGS) -I'complex_c' -c complexes_c/complexes_types.c complexes_c/complexes.c
-	$(CC) -I$(PWD) $(CFLAGS) -lm -I'complex_c' -c twiddle_init.c twiddle.c
+	heptc -I `heptc -where`/c twiddle.epi
+	$(CC) -I$(PWD) $(CFLAGS) $(LDFLAGS) -I'complex_c' -c twiddle_init.c twiddle.c
 	$(CC) -I$(PWD) $(CFLAGS) -I'complex_c' -c $(main)
 	$(CC) -I$(PWD) $(CFLAGS) $(src_obj) $(main_obj) -o main
 
