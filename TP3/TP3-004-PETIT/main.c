@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include "twiddle.h"
 #include "twiddle_init.h"
+#include "twiddle_c/twiddle.h"
+#include "complex_io_types.h"
+#include "complex_c/complex.h"
 int main() {
-	Complex__complex* o;
-	init_twiddle1024(o);
-	printf("%f + i %f\n", o[2].re, o[2].im);
+	Complex__complex c[1024];
+	init_twiddle1024(c);
+	printf("%f + i %f\n", c[2].re, c[2].im);
 	return 0;
 }
