@@ -1,7 +1,7 @@
 open Complex
 open Twiddle
 open Bitrev
-node butterfly<<n:int>>(i1:complex^(n/2); i2:complex^(n/2)) returns (o:complex^n)
+fun butterfly<<n:int>>(i1:complex^(n/2); i2:complex^(n/2)) returns (o:complex^n)
 var
 	o1 : complex^(n/2);
 	p : complex^(n/2);
@@ -9,62 +9,62 @@ var
 let
 	o1 = map<< (n/2) >> complex_add (i1, i2);
 	p = map<< (n/2) >> complex_sub (i1, i2);
-	r = map<< (n/2) >> complex_mul (c, p);
+	r = map<< (n/2) >> complex_mul (p, c);
 	o = o1@r;
 tel
 
-node bf<<n:int>>(i:complex^n) returns (o:complex^n)
+fun bf<<n:int>>(i:complex^n) returns (o:complex^n)
 var
 	i1 : complex^(n/2);
 	i2 : complex^(n/2);
 let
-	i1 = i[0..(n/2)];
-	i2 = i[(n/2)..n];
+	i1 = i[0..(n/2)-1];
+	i2 = i[(n/2)..n-1];
 	o = butterfly<<n>>(i1, i2);
-	
 tel
 const n1: int = 2
-node fft_aux2 (i:complex^2 ) returns (out:complex^2 )
+fun fft_aux2(i:complex^2) returns (o:complex^2)
 var
-	o : complex^2;
 	o1 : complex^2;
 let
-	out = bf<<n1>>(i);
-	out = bf<<n1>>(out);
+	o1 = bf<<n1>>(i);
+	o = bf<<n1>>(o1);
 tel
 
-node fft_aux4 (i:complex^4 ) returns (out:complex^4 )
+fun fft_aux4 (i:complex^4 ) returns (out:complex^4 )
 var
 	o : complex^4;
 let
-	o = fft_aux2(i);
-	out = fft_aux2(o);
+	o = fft_aux2(i[0..2])@fft_aux2(i[2..4]);
+	out = fft_aux2(o[0..2])@fft_aux2(o[2..4]);
 tel
 
-node fft_aux8 (i:complex^8 ) returns (out:complex^8 )
+fun fft_aux8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
 let
-	o = fft_aux4(i);
-	out = fft_aux4(o);
+	o = fft_aux4(i[0..4])@fft_aux4(i[4..8]);
+	out = fft_aux4(o[0..4])@fft_aux4(o[4..8]);
 tel
 
-node fft_aux16 (i:complex^16 ) returns (out:complex^16 )
+fun fft_aux16 (i:complex^16 ) returns (out:complex^16 )
 var
 	o : complex^16;
 let
 	o = fft_aux8(i);
 	out = fft_aux8(o);
+	o = fft_aux8(i[0..8])@fft_aux8(i[8..16]);
+	out = fft_aux8(o[0..8])@fft_aux8(o[8..16]);
 tel
 
-node fft8 (i:complex^8 ) returns (out:complex^8 )
+fun fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
 let
 	o = fft_aux8(i);
 	out = bitrev8(o);
 tel
-node fft16 (i:complex^16 ) returns (out:complex^16 )
+fun fft16 (i:complex^16 ) returns (out:complex^16 )
 var
 	o : complex^16;
 let
