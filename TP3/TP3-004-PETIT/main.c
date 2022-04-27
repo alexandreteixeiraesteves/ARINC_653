@@ -7,6 +7,6 @@
 int main() {
 	Complex__complex c[1024];
 	init_twiddle1024(c);
-	printf("%f + i %f\n", c[2].re, c[2].im);
+	fft_test();
 	return 0;
 }

@@ -1,29 +1,31 @@
-fun butterfly<<n:int>>(i1:complex^n, i2:complex^n) returns (o:complex^n)
+open Complex
+
+fun butterfly<<n:int>>(i1:complex^n; i2:complex^n) returns (o:complex^n)
 var
-	o : complex^n/2;
-	p : complex^n/2;
+	o : complex^(n/2);
+	p : complex^(n/2);
 	q : complex^n;
 let
 	o = map<< (n/2) >> (+) (i1, i2);
 	p = map<< (n/2) >> (-) (i1, i2);
-	p = map<< (n/2) >> (*) (Twiddle_c, p);
+	p = map<< (n/2) >> (/*) (Twiddle_c, p);
 	q = o@p;
 tel
 
 fun bf<<n:int>>(i:complex^n) returns (o:complex^n)
 var
 	idx : int ;
-	i1 : complex^(n/2)
-	i2 : complex^(n/2)
+	i1 : complex^(n/2);
+	i2 : complex^(n/2);
 let
 	if idx => idx then
-		butterfly(i1, i2)
+		() = butterfly(i1, i2);
 	else
 		if idx < n/2 then
-			(i1[(n/2)-idx]) = (i[idx])
+			i1[n/2-idx] = (i[idx]);
 		else
-			(i2[(n/2)-idx]) = (i[idx])
-		idx = 0 fby (idx + 1)
+			(i2[ (n/2) -idx]) = (i[idx]);
+		idx = 0 fby (idx + 1);
 tel
 
 fun fft_aux2 (in:complex^2 ) returns (out:complex^2 )
@@ -48,6 +50,23 @@ fun fft_aux16 (in:complex^2 ) returns (out:complex^2 )
 let
 	out = fft_aux8(in);
 	out = fft_aux8(out);
+tel
+
+fun fft8 (in:complex^8 ) returns (out:complex^8 )
+var
+	o : complex^8;
+let
+	out = fft_aux8(in);
+	o = out
+	out = bitrev8(o);
+tel
+fun fft16 (in:complex^16 ) returns (out:complex^16 )
+var
+	o : complex^16;
+let
+	out = fft_aux16(in);
+	o = out
+	out = bitrev16(o);
 tel
 
 

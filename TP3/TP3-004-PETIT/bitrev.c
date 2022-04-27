@@ -5,6 +5,8 @@
 // (in this TP, Complex__complex, corresponding to
 // the complex type defined in Heptagon,
 // in file complex.ept).
+#include "bitrev.h"
+#include <string.h>
 #define datatype Complex__complex
 static inline void swap(unsigned int forward,
 			unsigned int rev,
@@ -58,3 +60,8 @@ void Fftc__bitrev16_step(Complex__complex*i,Complex__complex*o) {
   memcpy(o,i,16*sizeof(Complex__complex)) ;
   bitrev(o,4) ;
 }
+void Fftc__bitrev8_step(Complex__complex*i,Complex__complex*o) {
+  memcpy(o,i,8*sizeof(Complex__complex)) ;
+  bitrev(o,2) ;
+}
+
