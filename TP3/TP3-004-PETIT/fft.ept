@@ -1,4 +1,5 @@
 open Complex
+open Complex_io
 open Twiddle
 open Bitrev
 fun butterfly<<n:int>>(i1:complex^(n/2); i2:complex^(n/2)) returns (o:complex^n)
@@ -59,6 +60,7 @@ fun fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
 let
+	() = print_complex(i[0]);
 	o = fft_aux8(i);
 	out = bitrev8(o);
 tel
