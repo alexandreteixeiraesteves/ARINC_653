@@ -1,12 +1,12 @@
 #!/bin/bash
 heptc -target c complex.ept
-heptc -c complex_io.epi
+heptc -target c complex_io.epi
 heptc -target c complexes.ept
 heptc -target c twiddle.epi
-heptc -c fft.ept
-heptc -c bitrev.epi
-heptc -c complex_vec_io.epi
-heptc -target c fft_test.ept
+heptc -target c bitrev.epi
+heptc -target c fft.ept
+heptc -target c complex_vec_io.epi
+heptc -c fft_test.ept
 
 cp complex_io_types.h complexes_c/.
 cp -r complex_c/ complexes_c/.

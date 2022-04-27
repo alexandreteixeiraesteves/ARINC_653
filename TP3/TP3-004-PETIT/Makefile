@@ -16,5 +16,5 @@ all:
 	./compile.sh
 
 clean: 
-	rm -rf $(src_obj) $(main_obj) complex_c complexes_c main complexes_types.o complexes.o *.log *.obc *.mls *.epci build
+	rm -rf $(src_obj) $(main_obj) complex_c complexes_c twiddle_c main *o *.log *.obc *.mls *.epci build
 

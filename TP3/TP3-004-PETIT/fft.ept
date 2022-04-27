@@ -1,71 +1,76 @@
 open Complex
-
-fun butterfly<<n:int>>(i1:complex^n; i2:complex^n) returns (o:complex^n)
+open Twiddle
+open Bitrev
+node butterfly<<n:int>>(i1:complex^(n/2); i2:complex^(n/2)) returns (o:complex^n)
 var
-	o : complex^(n/2);
+	o1 : complex^(n/2);
 	p : complex^(n/2);
-	q : complex^n;
+	r : complex^(n/2);
 let
-	o = map<< (n/2) >> (+) (i1, i2);
-	p = map<< (n/2) >> (-) (i1, i2);
-	p = map<< (n/2) >> (/*) (Twiddle_c, p);
-	q = o@p;
+	o1 = map<< (n/2) >> complex_add (i1, i2);
+	p = map<< (n/2) >> complex_sub (i1, i2);
+	r = map<< (n/2) >> complex_mul (c, p);
+	o = o1@r;
 tel
 
-fun bf<<n:int>>(i:complex^n) returns (o:complex^n)
+node bf<<n:int>>(i:complex^n) returns (o:complex^n)
 var
 	idx : int ;
 	i1 : complex^(n/2);
 	i2 : complex^(n/2);
+	res : complex;
 let
-	if idx => idx then
-		() = butterfly(i1, i2);
+	if idx = n then
+		o = butterfly<<n>>(i1, i2);
 	else
+		res = i.[idx] default i[n];
 		if idx < n/2 then
-			i1[n/2-idx] = (i[idx]);
+			i1 = [ i1 with [n/2-idx] = res];
 		else
-			(i2[ (n/2) -idx]) = (i[idx]);
+			i2 = [ i2 with [n/2-idx] = res];
+		end;
 		idx = 0 fby (idx + 1);
+	end;
 tel
 
-fun fft_aux2 (in:complex^2 ) returns (out:complex^2 )
+node fft_aux2 (i:complex^2 ) returns (out:complex^2 )
 let
-	out = bf(in);
+	out = bf(i);
 	out = bf(out);
 tel
 
-fun fft_aux4 (in:complex^2 ) returns (out:complex^2 )
+node fft_aux4 (i:complex^2 ) returns (out:complex^2 )
 let
-	out = fft_aux2(in);
+	out = fft_aux2(i);
 	out = fft_aux2(out);
 tel
 
-fun fft_aux8 (in:complex^2 ) returns (out:complex^2 )
+node fft_aux8 (i:complex^2 ) returns (out:complex^2 )
 let
-	out = fft_aux4(in);
+	out = fft_aux4(i);
 	out = fft_aux4(out);
 tel
 
-fun fft_aux16 (in:complex^2 ) returns (out:complex^2 )
+node fft_aux16 (i:complex^2 ) returns (out:complex^2 )
 let
-	out = fft_aux8(in);
+	out = fft_aux8(i);
 	out = fft_aux8(out);
 tel
 
-fun fft8 (in:complex^8 ) returns (out:complex^8 )
+node fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
 let
-	out = fft_aux8(in);
-	o = out
+	out = fft_aux8(i);
+	o = out;
 	out = bitrev8(o);
 tel
-fun fft16 (in:complex^16 ) returns (out:complex^16 )
+node fft16 (i:complex^16 ) returns (out:complex^16 )
 var
 	o : complex^16;
 let
-	out = fft_aux16(in);
-	o = out
+	out = fft_aux16(i);
+	o = out;
 	out = bitrev16(o);
 tel
 
