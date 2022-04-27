@@ -2,9 +2,9 @@
 heptc -target c complex.ept
 heptc -target c complex_io.epi
 heptc -target c complexes.ept
-heptc -target c twiddle.epi
+heptc -c twiddle.epi
 heptc -target c bitrev.epi
-heptc -target c fft.ept
+heptc -c fft.ept
 heptc -target c complex_vec_io.epi
 heptc -c fft_test.ept
 
@@ -16,8 +16,6 @@ cp complex_io.h complexes_c/.
 if [ ! -d "build" ];then
 mkdir build/
 fi
-
-
 
 cp `heptc -where`/c/pervasives.h build/.
 gcc -std=c99 -I'build' -c complex_c/complex_types.c complex_c/complex.c -lm -lc -lgcc

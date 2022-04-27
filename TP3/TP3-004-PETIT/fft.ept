@@ -23,15 +23,14 @@ let
 	o = butterfly<<n>>(i1, i2);
 	
 tel
-
+const n1: int = 2
 node fft_aux2 (i:complex^2 ) returns (out:complex^2 )
 var
 	o : complex^2;
 	o1 : complex^2;
 let
-	o = bf<<2>>(i);
-	o1 = bf<<2>>(o);
-	out = o1;
+	out = bf<<n1>>(i);
+	out = bf<<n1>>(out);
 tel
 
 node fft_aux4 (i:complex^4 ) returns (out:complex^4 )
