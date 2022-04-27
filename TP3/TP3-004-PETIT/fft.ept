@@ -15,54 +15,54 @@ tel
 
 node bf<<n:int>>(i:complex^n) returns (o:complex^n)
 var
-	idx : int ;
 	i1 : complex^(n/2);
 	i2 : complex^(n/2);
-	res : complex;
 let
-	if idx = n then
-		o = butterfly<<n>>(i1, i2);
-	else
-		res = i.[idx] default i[n];
-		if idx < n/2 then
-			i1 = [ i1 with [n/2-idx] = res];
-		else
-			i2 = [ i2 with [n/2-idx] = res];
-		end;
-		idx = 0 fby (idx + 1);
-	end;
+	i1 = i[0..(n/2)];
+	i2 = i[(n/2)..n];
+	o = butterfly<<n>>(i1, i2);
+	
 tel
 
 node fft_aux2 (i:complex^2 ) returns (out:complex^2 )
+var
+	o : complex^2;
+	o1 : complex^2;
 let
-	out = bf(i);
-	out = bf(out);
+	o = bf<<2>>(i);
+	o1 = bf<<2>>(o);
+	out = o1;
 tel
 
-node fft_aux4 (i:complex^2 ) returns (out:complex^2 )
+node fft_aux4 (i:complex^4 ) returns (out:complex^4 )
+var
+	o : complex^4;
 let
-	out = fft_aux2(i);
-	out = fft_aux2(out);
+	o = fft_aux2(i);
+	out = fft_aux2(o);
 tel
 
-node fft_aux8 (i:complex^2 ) returns (out:complex^2 )
+node fft_aux8 (i:complex^8 ) returns (out:complex^8 )
+var
+	o : complex^8;
 let
-	out = fft_aux4(i);
-	out = fft_aux4(out);
+	o = fft_aux4(i);
+	out = fft_aux4(o);
 tel
 
-node fft_aux16 (i:complex^2 ) returns (out:complex^2 )
+node fft_aux16 (i:complex^16 ) returns (out:complex^16 )
+var
+	o : complex^16;
 let
-	out = fft_aux8(i);
-	out = fft_aux8(out);
+	o = fft_aux8(i);
+	out = fft_aux8(o);
 tel
 
 node fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
 let
-	out = fft_aux8(i);
-	o = out;
+	o = fft_aux8(i);
 	out = bitrev8(o);
 tel
 node fft16 (i:complex^16 ) returns (out:complex^16 )
