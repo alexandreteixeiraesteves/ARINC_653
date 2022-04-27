@@ -1,5 +1,5 @@
-#ifndef COMPLEX_VEC_IO_H
-#define COMPLEX_VEC_IO_H
+#ifndef COMPLEX_VEC_IO
+#define COMPLEX_VEC_IO
 
 #include <stdio.h>
 #include <stdlib.h>
