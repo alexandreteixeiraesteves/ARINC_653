@@ -3,10 +3,10 @@
 #include "bitrev_types.h"
 #include "complex_c/complex.h"
 
-typedef struct { struct Complex__complex o; } Fftc__bitrev16_out ;
-typedef struct { struct Complex__complex o; } Fftc__bitrev8_out ;
+typedef struct { struct Complex__complex* o; } Bitrev__bitrev16_out ;
+typedef struct { struct Complex__complex* o; } Bitrev__bitrev8_out ;
 
-void Fftc__bitrev16_step(Complex__complex*i,Complex__complex*o);
-void Fftc__bitrev8_step(Complex__complex*i,Complex__complex*o);
+void Bitrev__bitrev16_step(Complex__complex*i,Bitrev__bitrev16_out *o);
+void Bitrev__bitrev8_step(Complex__complex*i,Bitrev__bitrev8_out *o);
 
 #endif

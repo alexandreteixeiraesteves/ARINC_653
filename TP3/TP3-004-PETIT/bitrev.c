@@ -56,11 +56,11 @@ void bitrev(datatype *data, unsigned int logN)
 }
 // Instantiation for size 16, working with Heptagon's
 // calling conventions.
-void Fftc__bitrev16_step(Complex__complex*i,Complex__complex*o) {
+void Bitrev__bitrev16_step(Complex__complex*i,Bitrev__bitrev16_out *o) {
   memcpy(o,i,16*sizeof(Complex__complex)) ;
   bitrev(o,4) ;
 }
-void Fftc__bitrev8_step(Complex__complex*i,Complex__complex*o) {
+void Bitrev__bitrev8_step(Complex__complex*i,Bitrev__bitrev8_out *o) {
   memcpy(o,i,8*sizeof(Complex__complex)) ;
   bitrev(o,2) ;
 }
