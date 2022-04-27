@@ -8,8 +8,9 @@
 int main() {
 	Fft_test__fft8_out* _out;
 	init_twiddle1024(Twiddle__c);
-	for (;;) {
-		Fft_test__fft8_step(_out);
-	}
+	printf("main");
+	fflush(stdout);
+	Fft_test__fft8_step(_out);
+	
 	return 0;
 }
