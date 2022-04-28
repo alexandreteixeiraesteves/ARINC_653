@@ -2,15 +2,21 @@ open Complex
 open Complex_io
 open Twiddle
 open Bitrev
+fun tiddle(n:int; n1: int) returns (o: complex)
+let
+	o = twiddle(n, n1);
+tel
 fun butterfly<<n:int>>(i1:complex^(n/2); i2:complex^(n/2)) returns (o:complex^n)
 var
 	o1 : complex^(n/2);
 	p : complex^(n/2);
 	r : complex^(n/2);
+	m : complex^(n/2);
 let
 	o1 = map<< (n/2) >> complex_add (i1, i2);
 	p = map<< (n/2) >> complex_sub (i1, i2);
-	r = map<< (n/2) >> complex_mul (p, c[0..((n/2)-1)]);
+	m = mapi<< (n/2) >> tiddle<(n)>();
+	r = map<< (n/2) >> complex_mul (p, m);
 	o = o1@r;
 tel
 
@@ -57,19 +63,13 @@ let
 tel
 
 fun fft8 (i:complex^8 ) returns (out:complex^8 )
-var
-	o : complex^8;
 let
 	() = print_complex(i[0]);
-	o = fft_aux8(i);
-	out = bitrev8(o);
+	out = fft_aux8(i);
 tel
 fun fft16 (i:complex^16 ) returns (out:complex^16 )
-var
-	o : complex^16;
 let
-	o = fft_aux16(i);
-	out = bitrev16(o);
+	out = fft_aux16(i);
 tel
 
 

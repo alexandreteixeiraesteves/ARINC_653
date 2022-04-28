@@ -20,7 +20,11 @@ cp -r complex_c/ fft_c/.
 cp complex_c/complex_types.h fft_test_c/.
 cp complex_vec_io_types.h fft_test_c/.
 cp fft_c/fft_types.h fft_test_c/.
-
+cp twiddle_types.h fft_test_c/.
+cp twiddle.h fft_c/.
+cp twiddle.c fft_c/.
+cp twiddle.epi fft_c/.
+cp twiddle.epi fft_test_c/.
 cp bitrev_types.h fft_test_c/.
 cp bitrev.h fft_test_c/.
 
