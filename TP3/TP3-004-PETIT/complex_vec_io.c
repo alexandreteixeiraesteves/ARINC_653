@@ -15,4 +15,5 @@ void Complex_vec_io__print_complex_vector_step(struct Complex__complex c[8], Com
 		struct Complex__complex tmp = c[i];
 		printf(" %f + i %f \n", tmp.re, tmp.im);
 	}
+	printf("\n");
 }

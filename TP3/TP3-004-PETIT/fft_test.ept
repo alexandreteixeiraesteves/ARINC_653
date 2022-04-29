@@ -6,7 +6,6 @@ open Fft
 fun fft8 () returns ()
 var
 	o : complex^8;
-	o1 : complex^8;
 let
 	o = fft8([{re=1.0;im=0.0},
 		{re=0.0; im=0.0},
@@ -17,13 +16,5 @@ let
 		{re=0.0; im=0.0},
 		{re=0.0; im=0.0}]);
 	() = print_complex_vector(o);
-	o1 = fft8([{re=0.0;im=0.0},
-		{re=1.0; im=0.0},
-		{re=0.0; im=0.0},
-		{re=0.0; im=0.0},
-		{re=0.0; im=0.0},
-		{re=0.0; im=0.0},
-		{re=0.0; im=0.0},
-		{re=0.0; im=0.0}]);
-	() = print_complex_vector(o1);
+	
 tel

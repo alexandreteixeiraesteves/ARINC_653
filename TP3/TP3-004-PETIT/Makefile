@@ -16,5 +16,5 @@ all:
 	./compile.sh
 
 clean: 
-	rm -rf $(src_obj) $(main_obj) complex_c complexes_c bitrev_c complex_io_c complex_vec_io_c fft_c fft_test_c main *o *.log *.obc *.mls *.epci build built
+	rm -rf $(src_obj) $(main_obj) complex_c complexes_c bitrev_c complex_io_c complex_vec_io_c fft_c fft_test_c twiddle_c main *o *.log *.obc *.mls *.epci build built
 
