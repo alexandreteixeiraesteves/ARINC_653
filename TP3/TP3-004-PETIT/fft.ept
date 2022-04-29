@@ -75,9 +75,11 @@ tel
 fun fft16 (i:complex^16 ) returns (out:complex^16 )
 var
 	o : complex^16;
+	o1 : complex^16;
 let
 	o = fft_aux16(i);
-	out = map<<16>> complex_div(o, 16.0^16);
+	o1 = bitrev16(o);
+	out = map<<16>> complex_div(o1, 16.0^16);
 tel
 
 

@@ -34,12 +34,10 @@ cp fft_c/fft.c fft_test_c/.
 cp complex_io_types.h fft_test_c/.
 cp complex_io_types.c fft_test_c/.
 
-echo "Entrée"
-
 if [ ! -d "build" ];then
 mkdir build/
 fi
-echo $(pwd)
+
 cp `heptc -where`/c/pervasives.h build/.
 
 gcc -std=c99 -g -I$(pwd) -I'build' -c complex_c/complex_types.c complex_c/complex.c -lm -lc -lgcc
