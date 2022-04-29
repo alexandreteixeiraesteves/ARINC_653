@@ -2,6 +2,7 @@ open Complex
 open Complex_io
 open Twiddle
 open Complex_vec_io
+open Bitrev
 fun tiddle(n:int; n1: int) returns (o: complex)
 let
 	o = twiddle(n1, n);
@@ -31,8 +32,15 @@ let
 tel
 
 fun fft_aux4 (i:complex^4 ) returns (out:complex^4 )
+var
+	o : complex^4;
+	o1 : complex^2;
+	o2 : complex^2;
 let
-	out = bf<<4>>(i);
+	o = bf<<4>>(i);
+	o1 = fft_aux2(o[0..1]);
+	o2 = fft_aux2(o[2..3]);
+	out = o1@o2;
 tel
 
 fun fft_aux8 (i:complex^8 ) returns (out:complex^8 )
@@ -58,9 +66,11 @@ tel
 fun fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
+	o1 : complex^8;
 let
 	o = fft_aux8(i);
-	out = map<<8>> complex_div(o, 8.0^8);
+	o1 = bitrev8(o);
+	out = map<<8>> complex_div(o1, 8.0^8);
 tel
 fun fft16 (i:complex^16 ) returns (out:complex^16 )
 var
