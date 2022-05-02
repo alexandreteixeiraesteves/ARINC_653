@@ -63,6 +63,78 @@ let
 	out = fft_aux8(o[0..7])@fft_aux8(o[8..15]);
 tel
 
+fun fft_aux1024 (i:complex^1024 ) returns (out:complex^1024 )
+var
+        o : complex^1024;
+let
+        o = 	fft_aux16(i[0..15])@
+fft_aux16(i[16..31])@
+fft_aux16(i[32..47])@	
+fft_aux16(i[48..63])@
+fft_aux16(i[64..79])@
+fft_aux16(i[80..95])@
+fft_aux16(i[96..111])@	
+fft_aux16(i[112..127])@
+fft_aux16(i[128..143])@
+fft_aux16(i[144..159])@
+fft_aux16(i[160..175])@
+fft_aux16(i[176..191])@
+fft_aux16(i[192..207])@
+fft_aux16(i[208..223])@  (***************j'en suis ici ************)
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15])@
+fft_aux16(i[8..15]);
+        
+	out = fft_aux8(o[0..7])@fft_aux8(o[8..15]);
+tel
+
 fun fft8 (i:complex^8 ) returns (out:complex^8 )
 var
 	o : complex^8;
