@@ -19,7 +19,7 @@ static struct sample buf[MAXBUFSIZE] ;
 
 // Samples communicated to/from the application are single-channel and
 // of float type, to facilitate integration.
-void Sndlib__read_samples_step(int*sample_size,float*samples) {
+void Sndlib__read_samples_step(int*sample_size,float*samples, Sndlib__read_samples_out *out) {
   // Check size fit 
   assert(*sample_size<=MAXBUFSIZE) ;
   // Reading the data from standard input
@@ -39,7 +39,7 @@ void Sndlib__read_samples_step(int*sample_size,float*samples) {
   }
 }
 
-void Sndlib__write_samples_step(int*sample_size,float*samples) {
+void Sndlib__write_samples_step(int*sample_size,float*samples, Sndlib__write_samples_out *out) {
   // Check size fit 
   assert(*sample_size<=MAXBUFSIZE) ;
   // Convert to struct sample, and duplicate the input data
