@@ -64,6 +64,13 @@ void Fftc__bitrev8_step(Complex__complex*i,Complex__complex *o) {
   memcpy(o,i,8*sizeof(Complex__complex)) ;
   bitrev(o,3) ;
 }
+void Fftc__bitrev1024_step(Complex__complex*i,Complex__complex *o) {
+  memcpy(o,i,1024*sizeof(Complex__complex)) ;
+  bitrev(o,10) ;
+}
+void Bitrev__bitrev1024_step(Complex__complex*i,Bitrev__bitrev16_out *_out) {
+	Fftc__bitrev1024_step(i, _out->o);
+}
 void Bitrev__bitrev16_step(Complex__complex*i,Bitrev__bitrev16_out *_out) {
 	Fftc__bitrev16_step(i, _out->o);
 }
