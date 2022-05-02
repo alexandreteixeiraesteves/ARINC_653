@@ -6,10 +6,10 @@
 
 #include "sndlib.h"
 
-typedef struct { float *samples; } myread_out ;
-typedef struct { } mywrite_out ;
+typedef struct { float *samples; } Myprog__myread_out ;
+typedef struct { } Myprog__mywrite_out ;
 
-void myread_step(int size, myread_out*_out) ;
-void mywrite_step(int size, float *samples ,mywrite_out*_out) ;
+void Myprog__myread_step(int size, Myprog__myread_out*_out) ;
+void Myprog__mywrite_step(int size, float *samples ,Myprog__mywrite_out*_out) ;
 
 #endif // MYPROG_H

@@ -17,7 +17,7 @@ run:
 	rec -t raw -r 44100 -e signed -b 16 -c 2 - | ./main | play -t raw -r 44100 -e signed -b 16 -c 2 -
 
 clean: 
-	rm -rf main *.o 
+	rm -rf main *.epci *.o 
 
 
 
