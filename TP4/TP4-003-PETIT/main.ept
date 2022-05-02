@@ -1,6 +1,8 @@
 open Complex
 open Sndlib
 open Myprog
+open Fft
+open Ifft
 
 const zero_f_256 : float^256 = 0.0^256
 
@@ -18,7 +20,7 @@ node main () returns ()
 var 
 	s0, s1, s2, s3, t : float^256;
 	s : float^1024;
-	c0 : complex^1024;
+	c0, c1, c2 : complex^1024;
 	c3 : complex^256;
 	(*samples:float^256;*)
 	(*tmp:float^256;*)
@@ -31,6 +33,8 @@ let
 
 	s = s3@s2@s1@s0 ; 			(* concaténation *)
 	c0 = map<<1024>> float_to_complex(s);  	(*float 2 complex*)
+	c1 = fft1024(c0);
+	c2 = ifft1024(c1);
 	c3 = c0[0..255];			(*extract [0..255]*)
 	t = map<<256>> complex_to_float(c3);	(*complex 2 float*)
 

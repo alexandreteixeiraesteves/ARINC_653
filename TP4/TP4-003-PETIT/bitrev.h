@@ -5,8 +5,10 @@
 
 typedef struct { struct Complex__complex o[16]; } Bitrev__bitrev16_out ;
 typedef struct { struct Complex__complex o[8]; } Bitrev__bitrev8_out ;
+typedef struct { struct Complex__complex o[1024]; } Bitrev__bitrev1024_out ;
 
 void Bitrev__bitrev16_step(Complex__complex*i,Bitrev__bitrev16_out *o);
 void Bitrev__bitrev8_step(Complex__complex*i,Bitrev__bitrev8_out *o);
+void Bitrev__bitrev1024_step(Complex__complex*i, Bitrev__bitrev1024_out *_out);
 
 #endif
