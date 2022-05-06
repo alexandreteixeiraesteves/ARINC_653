@@ -27,3 +27,9 @@ let
     im = (i1.re *. i2.im) +. (i1.im *. i2.re)
   } ;
 tel
+
+
+fun complex_div(i1:complex;i2:float) returns (o:complex)
+let
+	o = {re = i1.re/.i2 ; im = i1.im/.i2 };
+tel

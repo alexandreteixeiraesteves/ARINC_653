@@ -2,9 +2,9 @@ open Complex
 open Complex_io
 open Fftc
 open Complex_vec_io
-fun tiddle(n:int; n1: int) returns (o: complex)
+fun tiddle(n1: int) returns (o: complex)
 let
-	o = twiddle(n1, n);
+	o = twiddle(n1);
 tel
 
 fun bf<<n:int>>(i:complex^n) returns (o:complex^n)
@@ -20,7 +20,7 @@ let
 	i2 = i[(n/2)..(n-1)];
 	o1 = map<< (n/2) >> complex_add (i1, i2);
 	p = map<< (n/2) >> complex_sub (i1, i2);
-	m = mapi<< (n/2) >> tiddle<(n)>();
+	m = mapi<< (n/2) >> tiddle();
 	r = map<< (n/2) >> complex_mul (m, p);
 	o = o1@r;
 tel
@@ -41,6 +41,7 @@ let
 	o2 = fft_aux2(o[2..3]);
 	out = o1@o2;
 tel
+
 
 fun fft_aux8 (i:complex^8 ) returns (out:complex^8 )
 var
@@ -137,33 +138,13 @@ let
 	out = o1@o2;
 tel
 
-fun fft8 (i:complex^8 ) returns (out:complex^8 )
-var
-	o : complex^8;
-	o1 : complex^8;
-let
-	o = fft_aux8(i);
-	o1 = bitrev8(o);
-	out = map<<8>> complex_div(o1, 8.0^8);
-tel
-fun fft16 (i:complex^16 ) returns (out:complex^16 )
-var
-	o : complex^16;
-	o1 : complex^16;
-let
-	o = fft_aux16(i);
-	o1 = bitrev16(o);
-	out = map<<16>> complex_div(o1, 16.0^16);
-tel
-
 fun fft1024 (i:complex^1024 ) returns (out:complex^1024)
 var
-	o : complex^1024;
+	o : complex^Constants.fft_size;
 	o1 : complex^1024;
 let
 	o = fft_aux1024(i);
-	o1 = bitrev1024(o);
+	o1 = bitrev(o);
 	out = map<<1024>> complex_div(o1, 1024.0^1024);
 tel
-
 
