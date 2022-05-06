@@ -149,7 +149,13 @@ $(SNDIO).epci: $(SNDIO).epi $(CSTNAME).epci
 $(FLOAT).epci: $(FLOAT).epi
 	$(HEPTC) -c $<
 
-$(FFTC).epci: $(FFTC).epi $(CMPNAME).epci $(FLOAT).epci
+complex_io.epci: complex_io.epi
+	$(HEPTC) -c $<
+
+complex_vec_io.epci: complex_vec_io.epi
+	$(HEPTC) -c $<
+
+$(FFTC).epci: $(FFTC).epi $(CMPNAME).epci $(FLOAT).epci complex_io.epci complex_vec_io.epci
 	$(HEPTC) -c $<
 
 $(FFT_C) $(FFT_TYPES_C) $(FFT_H) $(FFT_TYPES_H) $(FFTNAME).epci : $(FFTNAME).ept $(CMPNAME).epci $(FFTC).epci

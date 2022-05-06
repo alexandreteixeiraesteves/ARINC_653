@@ -1,8 +1,7 @@
 open Complex
 open Complex_io
-open Twiddle
+open Fftc
 open Complex_vec_io
-open Bitrev
 fun tiddle(n:int; n1: int) returns (o: complex)
 let
 	o = twiddle(n1, n);
