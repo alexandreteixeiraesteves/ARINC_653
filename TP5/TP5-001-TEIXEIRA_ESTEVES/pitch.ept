@@ -1,6 +1,6 @@
 open Constants
 open Complex
-open Sndio
+open Sndlib
 open Fft
 open Mymath
 open Fftc 

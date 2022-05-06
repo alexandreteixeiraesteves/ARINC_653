@@ -12,7 +12,7 @@ CMPNAME_CAP = Complex
 FFTNAME_CAP = Fft
 APPNAME_CAP = Pitch
 # C part of the application
-SNDIO       = sndio
+SNDIO       = sndlib
 FLOAT       = mymath
 FFTC        = fftc
 
@@ -21,7 +21,7 @@ FFTC        = fftc
 # FOLDERS
 #===============================================================
 # Heptagon library C files location
-LIBDIR    = /Users/dpotop/lib/heptagon/c
+LIBDIR    = $(shell heptc -where)/c
 #LIBDIR    = /home/lopht/lib/heptagon/c
 # Where the generated C code goes
 CSTDIR    = ./$(CSTNAME)_c
