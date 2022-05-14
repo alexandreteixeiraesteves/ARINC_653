@@ -4,16 +4,36 @@
 #include <constants_types.h>
 #include <complex_types.h>
 
-void Fftc__init_fft_step(void) ;
-typedef struct { float o; } Fftc__hann_out;
-typedef struct { Complex__complex o; } Fftc__twiddle_out;
-void Fftc__hann_step(int i,Fftc__hann_out*_out) ;
-void Fftc__twiddle_step(int i,Fftc__twiddle_out*_out) ;
+#define FFT_SIZE 1024
+#define FFT_SIZE_LOG 10
+#define SAMPLE_SIZE 256
 
-typedef struct { Complex__complex o[8]; } Fftc__bitrev8_out;
-void Fftc__bitrev8_step(Complex__complex* i,Fftc__bitrev8_out*_out) ;
-typedef struct { Complex__complex o[Constants__fft_size]; } Fftc__bitrev_out;
-void Fftc__bitrev_step(Complex__complex* i,Fftc__bitrev_out*_out) ;
+/* Constant vectors, initialized in C */
+extern float Fftc__hann[FFT_SIZE] ;
+extern Complex__complex Fftc__twiddle[FFT_SIZE] ;
+void init_fft(void);
 
+typedef struct {
+  Complex__complex o ;
+} Fftc__get_twiddle_out ;
+void Fftc__get_twiddle_step(int k, int n, Fftc__get_twiddle_out*o) ;
 
+typedef struct {
+  float o ;
+} Fftc__get_hann1024_out ;
+void Fftc__get_hann1024_step(int k, Fftc__get_hann1024_out*o) ;
+
+typedef struct {
+  Complex__complex o[1024] ;
+} Fftc__bitrev1024_out ;
+void Fftc__bitrev1024_step(Complex__complex*i,Fftc__bitrev1024_out*o) ;
+
+typedef struct {
+  Complex__complex o[8] ;
+} Fftc__bitrev8_out ;
+void Fftc__bitrev8_step(Complex__complex*i,Fftc__bitrev8_out*o) ;
+
+typedef struct {} Fftc__print_complex_vector_out ;
+void Fftc__print_complex_vector_step(Complex__complex*i,
+				     Fftc__print_complex_vector_out*o) ;
 #endif

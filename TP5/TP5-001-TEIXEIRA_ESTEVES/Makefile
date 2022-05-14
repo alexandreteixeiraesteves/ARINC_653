@@ -12,8 +12,8 @@ CMPNAME_CAP = Complex
 FFTNAME_CAP = Fft
 APPNAME_CAP = Pitch
 # C part of the application
-SNDIO       = sndlib
-FLOAT       = mymath
+SNDIO       = sndio
+FLOAT       = float
 FFTC        = fftc
 
 
@@ -21,8 +21,7 @@ FFTC        = fftc
 # FOLDERS
 #===============================================================
 # Heptagon library C files location
-LIBDIR    = $(shell heptc -where)/c
-#LIBDIR    = /home/lopht/lib/heptagon/c
+LIBDIR    = ./
 # Where the generated C code goes
 CSTDIR    = ./$(CSTNAME)_c
 CMPDIR    = ./$(CMPNAME)_c
@@ -77,7 +76,7 @@ FLOAT_H     = $(FLOATDIR)/$(FLOAT).h
 FLOAT_C     = $(FLOATDIR)/$(FLOAT).c
 FFTC_H      = $(FFTCDIR)/$(FFTC).h
 FFTC_C      = $(FFTCDIR)/$(FFTC).c
-PERVASIVE_H = $(LIBDIR)/pervasives.h
+PERVASIVE_H = ./pervasives.h
 CMAIN       = ./main.c
 
 CHEADERS    = $(PERVASIVE_H) $(SNDIO_H) $(FLOAT_H) $(FFTC_H) \
@@ -149,13 +148,7 @@ $(SNDIO).epci: $(SNDIO).epi $(CSTNAME).epci
 $(FLOAT).epci: $(FLOAT).epi
 	$(HEPTC) -c $<
 
-complex_io.epci: complex_io.epi
-	$(HEPTC) -c $<
-
-complex_vec_io.epci: complex_vec_io.epi
-	$(HEPTC) -c $<
-
-$(FFTC).epci: $(FFTC).epi $(CMPNAME).epci $(FLOAT).epci complex_io.epci complex_vec_io.epci
+$(FFTC).epci: $(FFTC).epi $(CMPNAME).epci $(FLOAT).epci
 	$(HEPTC) -c $<
 
 $(FFT_C) $(FFT_TYPES_C) $(FFT_H) $(FFT_TYPES_H) $(FFTNAME).epci : $(FFTNAME).ept $(CMPNAME).epci $(FFTC).epci

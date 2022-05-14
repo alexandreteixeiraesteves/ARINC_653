@@ -1,8 +1,8 @@
 open Constants
 open Complex
-open Sndlib
+open Sndio
 open Fft
-open Mymath
+open Float
 open Fftc 
 
 (*------------------------------------------------------------*)
@@ -121,7 +121,7 @@ tel
 (*......................................*)
 (* *)
 (*......................................*)
-const semitones : float = 7.0
+const semitones : float = 4.0
 const two : float = 2.0
 node pitch_shift_driver () returns (ps:float)
 var t : float ;
@@ -135,7 +135,15 @@ tel
 (*--------------------------------------------------*)
 (* The main application                             *)
 (*--------------------------------------------------*)
-const int_factor : int  = (fft_size * osamp) / 4
+fun hann_window_aux(i:float;k:int) returns (o:float)
+let
+  o = i *. get_hann1024(k) ;
+tel
+fun hann_window(i:float^fft_size) returns (o:float^fft_size)
+let
+  o = mapi<<fft_size>> hann_window_aux (i) ;
+tel
+const int_factor : int  = (osamp) / 4
 node pitch_algo (sample:float^fft_size) returns (output_acc:float^fft_size)
 var
   win,win_fft,ifft_out : complex^fft_size ;
@@ -146,19 +154,17 @@ var
   fft_pos : complex^fft_size2 ;
   pitch_shift : float ;
   inv_factor : float ;
-  hann_window, hann_fft,rot_acc : float^fft_size ;
+  hann_fft,rot_acc : float^fft_size ;
   additive : float^fft_size ;
   tmp_int_factor : int ;
 let
   (* Compute the pitch shift *)
   pitch_shift = pitch_shift_driver() ;
 
-  hann_window = mapi<<fft_size>> hann () ;
-
   (* Convert to complex *)
   win = map<<fft_size>>
           float2complex
-          (map<<fft_size>> ( *.) (hann_window,sample)) ;
+          (hann_window(sample)) ;
   (* Perform FFT *)
   win_fft = fft1024(win) ;
 
@@ -195,9 +201,31 @@ let
   (* Build the additive factor *)
   tmp_int_factor = int_factor ;
   inv_factor = 1.0 /. int2float(tmp_int_factor) ;
-  hann_fft = map<<fft_size>> ( *.) (hann_window,map<<fft_size>> re (ifft_out)) ;
+  hann_fft = hann_window(map<<fft_size>> re (ifft_out)) ;
   additive = map<<fft_size>> ( *.)<(inv_factor)> (hann_fft) ;
   (* Overlap-add (rotating) accumulator *)
   rot_acc = output_acc[sample_size..(fft_size-1)]@cst_zero_f_sample ;
   output_acc = map<<fft_size>> (+.) (cst_zero_f_fft fby rot_acc,additive) ;
+  (* output_acc = map<<fft_size>> re (ifft1024(fft1024(map<<fft_size>> float2complex (sample)))) ; *)
+tel
+
+node main() returns ()
+var
+  sample0,sample1,sample2,sample3 : float^sample_size ;
+  sample : float^fft_size ;
+  output_acc : float^fft_size ;
+  tmp_sample_size : int ;
+let
+  (* Sliding window over input samples, Hann window and FFT over it *)
+  tmp_sample_size = sample_size ;
+  sample0 = read_samples(tmp_sample_size) ;
+  sample1 = cst_zero_f_sample fby sample0 ;
+  sample2 = cst_zero_f_sample fby sample1 ;
+  sample3 = cst_zero_f_sample fby sample2 ;
+  sample  = sample3@sample2@sample1@sample0 ;
+
+  output_acc = pitch_algo(sample) ;
+
+  (* Output *)
+  () = write_samples(tmp_sample_size,output_acc[0..(sample_size-1)]) ;
 tel
