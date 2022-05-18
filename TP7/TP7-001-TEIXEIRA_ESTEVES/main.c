@@ -13,8 +13,8 @@ int main() {
 		else {
 			z = _outg->o;
 		}
-		_outf = Extern__f_step(z);
-		_outg = Extern__g_step(_outf->o);
+		Extern__f_step(z, &_outf);
+		Extern__g_step(_outf->o, &_outg);
 		sleep(1);	
 	}	  
 	return 0  ;

@@ -106,6 +106,8 @@ all: extern kernel
 extern: 
 	heptc -c extern.epi
 	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -c extern_types.c extern.c
+	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -c main.c
+	$(CC) -I$(PWD)  extern_types.o extern.o main.o -o main
 
 kernel: $(OUTPUTDIR)/kernel.img \
 	$(OUTPUTDIR)/mypart.elf \
