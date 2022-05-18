@@ -17,11 +17,42 @@
 // The task function
 void t1(){
   RETURN_CODE_TYPE rc ;
-  int cnt = 0 ;
+  int cnt = 0 ;  
+  int x;
+  int o;
   for(;;){
     // Each task instance prints the current instance counter
     // and then increments it for the next cycle.
-    debug_printf("Task t1. Instance %d\n",cnt) ;
+    //debug_printf("Task t1. Instance %d\n",cnt) ;
+    
+    //RCV -----------------------------------------
+    int y;
+
+    char recv_buf[sizeof(int)];
+    int recv_size;     
+    RECEIVE_QUEUING_MESSAGE(1,
+                            0,
+                            (APEX_BYTE*)recv_buf,
+                            &recv_size,
+                            &rc);
+    console_perror(rc, "part2", "task0 RECEIVE");
+    memcpy((char*)&y, recv_buf, sizeof(int));
+    //---------------------------------------------
+
+    x = y;
+
+    o = x + 5;
+
+    debug_printf("f(%d) = %d\n", x, o);
+    //SND
+
+    SEND_QUEUING_MESSAGE(       0,
+                                (APEX_BYTE*)&o,
+                                sizeof(int),
+                                0,
+                                &rc);
+    console_perror(rc, "part2", "task0 SEND");
+	  
     cnt++ ;
     // Wait until the next task instance
     PERIODIC_WAIT(&rc) ;

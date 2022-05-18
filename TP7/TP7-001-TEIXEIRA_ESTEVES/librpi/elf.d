@@ -1,28 +1,28 @@
 elf.o: elf.c \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdint.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdio.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stddef.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdarg.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/debug.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/uart.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/string.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf-internals.h \
- /home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf.h
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdint.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdio.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stddef.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdarg.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/debug.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/uart.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/string.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf-internals.h \
+ /home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf.h
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdint.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdint.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdio.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdio.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stddef.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stddef.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdarg.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/stdarg.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/debug.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/debug.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/uart.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/uart.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/string.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/libc/string.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf-internals.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf-internals.h:
 
-/home/ubuntu/Documents/ARMINC653/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf.h:
+/home/teabis/Bureau/ARINC_653/TP7/TP7-001-TEIXEIRA_ESTEVES/librpi/elf.h:
