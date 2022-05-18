@@ -2,10 +2,10 @@
 #include "extern.h"
 void Extern__f_step(int i, Extern__f_out* _out){
 	_out->o = i + 5;
-	printf("%d + 5 = %d\n", i, _out->o);
+	printf("f(%d) = %d\n", i, _out->o);
 }
 
 void Extern__g_step(int i, Extern__g_out* _out){
 	_out->o = i + 1;
-	printf("%d + 1 = %d\n", i, _out->o);
+	printf("g(%d) = %d\n", i, _out->o);
 }

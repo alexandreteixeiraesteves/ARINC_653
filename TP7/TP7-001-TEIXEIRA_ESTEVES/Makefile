@@ -105,8 +105,8 @@ all: extern kernel
 
 extern: 
 	heptc -c extern.epi
-	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -c extern_types.c extern.c
-	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -c main.c
+	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -g -c extern_types.c extern.c
+	$(CC) -I$(PWD) $(EXTERN_CFLAGS) -g -c main.c
 	$(CC) -I$(PWD)  extern_types.o extern.o main.o -o main
 
 kernel: $(OUTPUTDIR)/kernel.img \
@@ -153,7 +153,7 @@ libpartition/libpartition.a: force_look
 	cd libpartition ; make
 
 clean:
-	$(RM) $(KERNELDIR)/kernel.elf $(OUTPUTDIR)/*.img $(OUTPUTDIR)/*.elf *.o *.epci
+	$(RM) $(KERNELDIR)/kernel.elf $(OUTPUTDIR)/*.img $(OUTPUTDIR)/*.elf *.o *.epci main
 	cd kernel ; make clean
 	cd mypart ; make clean
 	cd alexandr ; make clean
