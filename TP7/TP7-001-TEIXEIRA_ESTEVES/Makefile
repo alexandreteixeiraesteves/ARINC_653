@@ -32,5 +32,5 @@ all:
 #	$(CC) -I$(PWD)  sndlib.o myprog.o main.o process.o -o main
 
 clean: 
-	# rm -rf main *.epo *.epci *.o *.log *.mls *.obc complex_c complex_vec_c complex_vectors_c main_c 
+	rm -rf *.epci *.o  
 
