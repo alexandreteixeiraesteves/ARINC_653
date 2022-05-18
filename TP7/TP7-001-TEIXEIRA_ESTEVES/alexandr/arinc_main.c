@@ -30,7 +30,7 @@ void t1(){
 
     char recv_buf[sizeof(int)];
     int recv_size;     
-    RECEIVE_QUEUING_MESSAGE(1,
+    RECEIVE_QUEUING_MESSAGE(0,
                             0,
                             (APEX_BYTE*)recv_buf,
                             &recv_size,
@@ -46,7 +46,7 @@ void t1(){
     debug_printf("f(%d) = %d\n", x, o);
     //SND
 
-    SEND_QUEUING_MESSAGE(       0,
+    SEND_QUEUING_MESSAGE(       1,
                                 (APEX_BYTE*)&o,
                                 sizeof(int),
                                 0,

@@ -75,7 +75,7 @@ void main_process() {
   t1_pat.TIME_CAPACITY = 0xf4240 ;
   t1_pat.ENTRY_POINT   = (void*)t1 ;
   t1_pat.STACK_SIZE    = 0x1000 ;
-  t1_pat.BASE_PRIORITY = 0x1 ;
+  t1_pat.BASE_PRIORITY = 0x2 ;
   t1_pat.DEADLINE      = HARD ;
   strcpy(t1_pat.NAME,"t1") ;
   // Create process t1
