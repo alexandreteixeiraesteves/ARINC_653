@@ -98,6 +98,7 @@ all: kernel
 
 kernel: $(OUTPUTDIR)/kernel.img \
 	$(OUTPUTDIR)/mypart.elf \
+	$(OUTPUTDIR)/alexandr.elf \
 
 
 $(OUTPUTDIR)/kernel.img: $(KERNELDIR)/kernel.elf
@@ -113,6 +114,10 @@ $(KERNELOBJ) $(KERNEL_LDSCRIPT): force_look
 $(OUTPUTDIR)/mypart.elf: force_look $(PARTITION_LIBRARIES)
 	$(ECHO) looking into partition folder mypart
 	cd mypart ; make
+
+$(OUTPUTDIR)/alexandr.elf: force_look $(PARTITION_LIBRARIES)
+	$(ECHO) looking into partition folder alexandr
+	cd alexandr ; make
 
 librpi/librpi.a: force_look
 	$(ECHO) looking into librpi
@@ -138,6 +143,7 @@ clean:
 	$(RM) $(KERNELDIR)/kernel.elf $(OUTPUTDIR)/*.img $(OUTPUTDIR)/*.elf
 	cd kernel ; make clean
 	cd mypart ; make clean
+	cd alexandr ; make clean
 	cd librpi ; make clean 
 	cd libc ; make clean 
 	cd libsdfs ; make clean
@@ -148,6 +154,7 @@ distclean: clean
 	$(RM) *.d
 	cd kernel ; make distclean
 	cd mypart ; make distclean
+	cd alexandr ; make distclean
 	cd librpi ; make distclean 
 	cd libc ; make distclean 
 	cd libsdfs ; make distclean 

@@ -1,10 +1,10 @@
 string.o: string.c \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/string.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/string.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/string.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/string.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h:

@@ -1,37 +1,37 @@
 level.o: level.c \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/svc-call.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/registers.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/partition.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/process.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/types.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/svc-l2-request.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/queuing.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/scheduler.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmu.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmap.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/l1-l2-interface.h
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/svc-call.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/registers.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/partition.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/process.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/types.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/svc-l2-request.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/queuing.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/scheduler.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmu.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmap.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/l1-l2-interface.h
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/svc-call.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/svc-call.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/registers.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/registers.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/partition.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/partition.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/process.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/process.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/types.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/types.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/svc-l2-request.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/svc-l2-request.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/queuing.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/queuing.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/scheduler.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/scheduler.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmu.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmu.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmap.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmap.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/l1-l2-interface.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/l1-l2-interface.h:

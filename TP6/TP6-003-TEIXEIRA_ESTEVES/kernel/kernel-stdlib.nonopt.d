@@ -1,16 +1,16 @@
 kernel-stdlib.nonopt.o: kernel-stdlib.c \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdlib.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/debug.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/uart.h
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdlib.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/debug.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/uart.h
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdlib.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdlib.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/debug.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/debug.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/uart.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/uart.h:

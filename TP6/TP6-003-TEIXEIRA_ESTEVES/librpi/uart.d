@@ -1,19 +1,19 @@
 uart.o: uart.c \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmap.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmio.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/gpio.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/timer.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/uart.h
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmap.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmio.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/gpio.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/timer.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/uart.h
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmap.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmap.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/mmio.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/mmio.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/gpio.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/gpio.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/timer.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/timer.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/librpi/uart.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/librpi/uart.h:

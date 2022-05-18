@@ -1,22 +1,22 @@
 error.o: error.c \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/types.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/errors.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/error.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdio.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h \
- /Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdarg.h
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/types.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/errors.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/error.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdio.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h \
+ /home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdarg.h
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/arinc653/types.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/arinc653/types.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdint.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdint.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/kernel/errors.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/kernel/errors.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libpartition/error.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libpartition/error.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdio.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdio.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stddef.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stddef.h:
 
-/Users/dpotop/gitlab/personal/Cursuri/EPITA/2022/rpi653-onepart/libc/stdarg.h:
+/home/ubuntu/Documents/ARMINC653/ARINC_653/TP6/TP6-003-TEIXEIRA_ESTEVES/libc/stdarg.h:

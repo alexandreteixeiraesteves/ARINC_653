@@ -88,7 +88,7 @@ void main_process() {
   // Start process t2. This places it into waiting mode.
   // Actual start will take place at the temporal reference
   // point.
-  START(t2_pid,&rc) ;
+  DELAYED_START(t2_pid, 0x186A0,&rc) ;
   console_perror(rc,"mypart","main_process:START");
   // Enter NORMAL mode
   SET_PARTITION_MODE(NORMAL,&rc) ;
